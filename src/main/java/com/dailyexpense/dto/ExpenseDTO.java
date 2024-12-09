@@ -5,12 +5,31 @@ import java.time.LocalDate;
 public class ExpenseDTO {
 
     private long id;
+    
     private String expenseType;
     private String payee;
     private String category;
     private LocalDate date;
     private Double amount;
-    private Long paymentId;
+    private Long paymentId; // Optional, can be null if creating a new payment
+    private String paymentMode; // Required for new payment
+    private String paymentDetails; // Required for new payment
+    
+    public String getPaymentMode() {
+        return paymentMode;
+    }
+
+    public void setPaymentMode(String paymentMode) {
+        this.paymentMode = paymentMode;
+    }
+
+    public String getPaymentDetails() {
+        return paymentDetails;
+    }
+
+    public void setPaymentDetails(String paymentDetails) {
+        this.paymentDetails = paymentDetails;
+    }
 
     public long getId() {
         return id;
